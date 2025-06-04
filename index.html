@@ -1,123 +1,431 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leandro Barroso - CV</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="flex flex-col md:flex-row max-w-6xl mx-auto bg-white shadow-lg mt-10 rounded-lg overflow-hidden">
-    
-    <!-- Sidebar -->
-    <aside class="bg-emerald-900 text-white p-6 w-full md:w-1/3">
-      <h1 class="text-2xl font-bold mb-1">Leandro Barroso</h1>
-      <p class="uppercase text-sm text-gray-300">Senior Web Developer</p>
-      <hr class="my-4 border-gray-500" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leandro Barroso - CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @media print {
+        body {
+          background-color: white !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-100 text-gray-800 transition-colors duration-300 dark"
+    id="cv-body"
+  >
+    <div class="no-print fixed top-4 right-4 flex gap-2 z-50">
+      <button
+        onclick="toggleDarkMode()"
+        class="text-white text-lg px-3 py-1 rounded shadow hover:text-emerald-400"
+      >
+        <i class="fas fa-circle-half-stroke"></i>
+      </button>
+    </div>
 
-      <div class="mb-6">
-        <h2 class="text-lg font-semibold">Details</h2>
-        <p>Porto, Portugal</p>
-        <p>934762807</p>
-        <p><a href="mailto:lafbarroso@gmail.com" class="underline">lafbarroso@gmail.com</a></p>
-      </div>
-
-      <div class="mb-6">
-        <h2 class="text-lg font-semibold">Skills</h2>
-        <ul class="space-y-2 text-sm">
-          <li>Web Development</li>
-          <li>HTML & CSS</li>
-          <li>Angular</li>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>Ionic</li>
-          <li>Git</li>
-          <li>MySQL</li>
-          <li>PostgreSQL</li>
-          <li>SQL Server</li>
-          <li>SolidJS</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-lg font-semibold">Languages</h2>
-        <ul class="text-sm">
-          <li>Portuguese</li>
-          <li>English</li>
-          <li>Spanish</li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="p-8 w-full md:w-2/3">
-      <section class="mb-8">
-        <h2 class="text-xl font-bold mb-2">Profile</h2>
-        <ul class="list-disc list-inside text-sm space-y-1">
-          <li><strong>10 years of experience</strong> in web and app development</li>
-          <li>Expert in full-stack solutions, across the <strong>banking and health sectors</strong></li>
-          <li>Focused on building and enhancing products with strong background in <strong>information systems</strong></li>
-          <li>Delivered enterprise software internationally (Kenya, Mozambique, Angola)</li>
-        </ul>
-      </section>
-
-      <section class="mb-8">
-        <h2 class="text-xl font-bold mb-2">Employment History</h2>
-
-        <div class="mb-4">
-          <h3 class="font-semibold">Software Developer, Cambridge Digital Health, Remote (UK)</h3>
-          <p class="text-sm text-gray-600">Jan 2020 – Presente</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Full-stack development</li>
-            <li>Internal web applications</li>
-            <li>SolidJS, MySQL, Go</li>
-            <li>Angular, Ionic, PostgreSQL, Node.js</li>
-            <li>Health sector</li>
-          </ul>
-        </div>
-
-        <div class="mb-4">
-          <h3 class="font-semibold">Information Systems Consultant, ITSCredit, Porto</h3>
-          <p class="text-sm text-gray-600">Jun 2018 – Dez 2019</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Full-stack development</li>
-            <li>Banking (credit) operations and processes</li>
-            <li>Team leading</li>
-            <li>International travel to deliver projects</li>
-            <li>C#, .NET, SQL Server, Angular</li>
-          </ul>
-        </div>
-
-        <div class="mb-4">
-          <h3 class="font-semibold">Information Systems Consultant, ITSector, Porto</h3>
-          <p class="text-sm text-gray-600">Mai 2016 – Jun 2018</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Full-stack development</li>
-            <li>Banking solutions and processes</li>
-            <li>C#, .NET, SQL Server</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-semibold">Web Developer, PcPlus, Porto</h3>
-          <p class="text-sm text-gray-600">Mai 2015 – Mar 2016</p>
-          <ul class="list-disc list-inside text-sm">
-            <li>Front-end and backend development</li>
-            <li>Web-based billing system</li>
-            <li>ASP.NET MVC, SQL, Bootstrap</li>
-          </ul>
-        </div>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-bold mb-2">Education</h2>
-        <p class="text-sm">
-          <strong>Master's degree</strong>, Informatics Engineering<br>
-          Universidade de Coimbra, Coimbra<br>
-          <span class="text-gray-600">Setembro 2007 – Junho 2014</span>
+    <div
+      class="flex flex-col md:flex-row max-w-6xl mx-auto bg-white shadow-lg mt-10 rounded-lg overflow-hidden dark:bg-gray-900 dark:text-white"
+    >
+      <!-- Sidebar -->
+      <aside class="bg-emerald-900 text-white p-6 w-full md:w-1/3">
+        <h1 class="text-4xl font-bold tracking-tight mb-1">Leandro Barroso</h1>
+        <p class="uppercase text-sm tracking-wider text-emerald-300">
+          Senior Web Developer
         </p>
-      </section>
-    </main>
-  </div>
-</body>
+        <div class="border-t border-emerald-800 my-4"></div>
+
+        <!-- Contact -->
+        <div class="mb-6 space-y-3 text-sm">
+          <div class="flex items-center gap-2">
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 8a6 6 0 00-12 0c0 7 6 12 6 12s6-5 6-12z"
+              />
+            </svg>
+            <span>Porto, Portugal</span>
+          </div>
+          <div
+            class="flex items-center gap-2 text-sm text-white hover:text-emerald-400"
+          >
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:lafbarroso@gmail.com" class="underline"
+              >lafbarroso@gmail.com</a
+            >
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fab fa-linkedin text-white"></i>
+            <a
+              href="https://www.linkedin.com/in/lafbarroso"
+              target="_blank"
+              class="underline hover:text-emerald-400 transition"
+              >LinkedIn</a
+            >
+          </div>
+          <div class="border-t border-emerald-800 my-4"></div>
+        </div>
+
+        <div class="grid gap-x-4 gap-y-2 text-md text-white mb-6">
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-angular"></i>Angular</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[95%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-js"></i>JavaScript</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[90%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-js"></i>TypeScript</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[85%] rounded"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-white mb-6">
+          <!-- Frontend -->
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-html5"></i>HTML</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[95%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-css3-alt"></i>CSS</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[90%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-palette"></i>SCSS</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[75%] rounded"></div>
+            </div>
+          </div>
+
+          <!-- Frameworks & Libraries -->
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-mobile-screen"></i>Ionic</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[80%] rounded"></div>
+            </div>
+          </div>
+
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-layer-group"></i>SolidJS</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[35%] rounded"></div>
+            </div>
+          </div>
+
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-microsoft"></i>.NET / ASP.NET</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[50%] rounded"></div>
+            </div>
+          </div>
+
+          <!-- Programming Languages -->
+
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-code"></i>C#</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[80%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-database"></i>SQL</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[90%] rounded"></div>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-database"></i>PostgreSQL</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[85%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-database"></i>MySQL</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[80%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-database"></i>SQL Server</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[80%] rounded"></div>
+            </div>
+          </div>
+
+          <!-- Tools & Workflow -->
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-code"></i>VS Code</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[95%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-brands fa-git-alt"></i>Git/GitHub</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[85%] rounded"></div>
+            </div>
+          </div>
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-flask"></i>Postman</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[60%] rounded"></div>
+            </div>
+          </div>
+
+          <!-- DevOps / Cloud 
+  <div><label class="flex items-center gap-2"><i class="fa-brands fa-docker"></i>Docker</label><div class="bg-white rounded h-1.5  mt-1"><div class="bg-emerald-400 h-1.5  w-[75%] rounded"></div></div></div>
+  <div><label class="flex items-center gap-2"><i class="fa-brands fa-aws"></i>AWS</label><div class="bg-white rounded h-1.5  mt-1"><div class="bg-emerald-400 h-1.5  w-[65%] rounded"></div></div></div>
+  <div><label class="flex items-center gap-2"><i class="fa-brands fa-github"></i>GitHub Actions</label><div class="bg-white rounded h-1.5  mt-1"><div class="bg-emerald-400 h-1.5  w-[70%] rounded"></div></div></div>
+-->
+          <!-- APIs -->
+          <div>
+            <label class="flex items-center gap-2"
+              ><i class="fa-solid fa-plug"></i>REST APIs</label
+            >
+            <div class="bg-white rounded h-1.5 mt-1">
+              <div class="bg-emerald-400 h-1.5 w-[90%] rounded"></div>
+            </div>
+          </div>
+        </div>
+        <div class="text-xs text-white mb-6">
+          <span class="block font-semibold mb-1">Others:</span>
+          <p>Node.js, Cordova, Go</p>
+        </div>
+
+        <div class="border-t border-emerald-800 my-4"></div>
+
+        <!-- Languages -->
+        <div>
+          <div class="space-y-2 text-sm text-white mb-6">
+            <div>
+              <label class="flex items-center gap-2">Portuguese</label>
+              <div class="bg-white rounded h-1.5 mt-1">
+                <div class="bg-emerald-400 h-1.5 w-[99%] rounded"></div>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2">English</label>
+              <div class="bg-white rounded h-1.5 mt-1">
+                <div class="bg-emerald-400 h-1.5 w-[85%] rounded"></div>
+              </div>
+            </div>
+            <div>
+              <label class="flex items-center gap-2">Spanish</label>
+              <div class="bg-white rounded h-1.5 mt-1">
+                <div class="bg-emerald-400 h-1.5 w-[30%] rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="p-8 w-full md:w-2/3 space-y-6">
+        <!-- Profile -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-bold mb-2">Profile</h2>
+          <div
+            class="bg-white p-5 rounded-md shadow border border-gray-100 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <p class="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+              Senior Web Developer with over
+              <strong>10 years of experience</strong> in web and mobile
+              application development. Specialized in full-stack solutions for
+              the <strong>banking and healthcare</strong> sectors, with a strong
+              focus on delivering scalable products and improving operational
+              efficiency through modern information systems. Experienced in
+              international project delivery (Kenya, Mozambique, Angola) with a
+              collaborative and detail-oriented approach.
+            </p>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-bold mb-2">Employment History</h2>
+
+          <div
+            class="bg-white p-5 rounded-md shadow border border-gray-100 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-semibold text-lg">
+                Software Developer, Cambridge Digital Health
+              </h3>
+              <span class="text-xs text-gray-500 italic dark:text-gray-400"
+                >Remote | Jan 2020 – Present</span
+              >
+            </div>
+            <ul
+              class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300"
+            >
+              <li>Full-stack development of internal web applications</li>
+              <li>SolidJS, MySQL, Go, Angular, Ionic, Node.js</li>
+              <li>Web and mobile apps for the healthcare sector</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded-md shadow border border-gray-100 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-semibold text-lg">
+                Information Systems Consultant, ITSCredit
+              </h3>
+              <span class="text-xs text-gray-500 italic dark:text-gray-400"
+                >Porto | Jun 2018 – Dec 2019</span
+              >
+            </div>
+            <ul
+              class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300"
+            >
+              <li>Full-stack development in credit and banking processes</li>
+              <li>Team leadership and international project delivery</li>
+              <li>C#, .NET, SQL Server, Angular</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded-md shadow border border-gray-100 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-semibold text-lg">
+                Information Systems Consultant, ITSector
+              </h3>
+              <span class="text-xs text-gray-500 italic dark:text-gray-400"
+                >Porto | May 2016 – Jun 2018</span
+              >
+            </div>
+            <ul
+              class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300"
+            >
+              <li>Full-stack development for banking solutions</li>
+              <li>C#, .NET, SQL Server</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-white p-5 rounded-md shadow border border-gray-100 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-semibold text-lg">Web Developer, PcPlus</h3>
+              <span class="text-xs text-gray-500 italic dark:text-gray-400"
+                >Porto | May 2015 – Mar 2016</span
+              >
+            </div>
+            <ul
+              class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300"
+            >
+              <li>Front-end and back-end development of a billing system</li>
+              <li>ASP.NET MVC, SQL, Bootstrap</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="space-y-4">
+          <h2 class="text-2xl font-bold mb-2">Education</h2>
+
+          <div
+            class="bg-white p-5 rounded-md shadow border border-gray-100 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center">
+              <h3 class="font-semibold text-lg">
+                Master's Degree in Informatics Engineering
+              </h3>
+              <span class="text-xs text-gray-500 italic dark:text-gray-400"
+                >2007 – 2014</span
+              >
+            </div>
+            <div
+              class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300"
+            >
+              University of Coimbra, Portugal
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      if (prefersDark) document.getElementById("cv-body").classList.add("dark");
+
+      function toggleDarkMode() {
+        document.getElementById("cv-body").classList.toggle("dark");
+      }
+    </script>
+  </body>
 </html>
