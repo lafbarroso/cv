@@ -44,9 +44,22 @@
       <button
         onclick="toggleDarkMode()"
         class="rounded-full border border-zinc-300 px-3 py-1 text-sm text-zinc-700 hover:bg-zinc-50 active:scale-95 transition dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
-        aria-label="Alternar modo escuro"
+        aria-label="Alternar modo de cor (escuro/claro)"
       >
-        <span class="font-mono">B/W</span>
+        <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
       </button>
     </div>
 
@@ -211,6 +224,10 @@
         <footer class="pt-8 mt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400">
           <p data-lang="en" class="i18n">Open to remote or hybrid (Porto area). Prefer products with positive impact (healthcare, parenting, music, logistics, maps, travel).</p>
           <p data-lang="pt" class="i18n hidden">Disponível para remoto ou híbrido (Porto e arredores). Preferência por produto com impacto positivo (saúde, parentalidade, música, logística, mapas, viagens).</p>
+          <p class="mt-2 text-zinc-400 dark:text-zinc-600">
+            <span data-lang="en" class="i18n">Built by Leandro Barroso with HTML, Tailwind CSS, and Vanilla JS. View source on <a href="YOUR_GITHUB_REPO_URL_HERE" target="_blank" rel="noopener noreferrer" class="underline decoration-accent-300 underline-offset-4 hover:decoration-2">GitHub</a>.</span>
+            <span data-lang="pt" class="i18n hidden">Construído por Leandro Barroso com HTML, Tailwind CSS e Vanilla JS. Ver código em <a href="YOUR_GITHUB_REPO_URL_HERE" target="_blank" rel="noopener noreferrer" class="underline decoration-accent-300 underline-offset-4 hover:decoration-2">GitHub</a>.</span>
+          </p>
         </footer>
       </main>
     </div>
@@ -218,11 +235,28 @@
     <script>
       const body = document.getElementById('cv-body');
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) body.classList.add('dark','bg-zinc-950','text-zinc-100');
+      if (prefersDark) {
+        body.classList.add('dark', 'bg-zinc-950', 'text-zinc-100');
+      }
+
       function toggleDarkMode(){
         body.classList.toggle('dark');
         body.classList.toggle('bg-zinc-950');
         body.classList.toggle('text-zinc-100');
+        // Save user preference
+        if (body.classList.contains('dark')) {
+          localStorage.setItem('theme', 'dark');
+        } else {
+          localStorage.setItem('theme', 'light');
+        }
+      }
+
+      // Load user preference for dark mode
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark', 'bg-zinc-950', 'text-zinc-100');
+      } else if (savedTheme === 'light') {
+        body.classList.remove('dark', 'bg-zinc-950', 'text-zinc-100');
       }
 
       // Language toggle (default EN)
@@ -251,7 +285,7 @@
       section + section { border-top: 1px solid rgba(24,24,27,0.06); }
       .dark section + section { border-top-color: rgba(244,244,245,0.08); }
       a { color: inherit; }
-      a:hover { color: #51675f; }
+      a:not([href*="github.com"]):hover { color: #51675f; }
     </style>
   </body>
 </html>
