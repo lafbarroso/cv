@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leandro Barroso — CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,600;7..72,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -11,42 +16,54 @@
           extend: {
             colors: {
               accent: {
-                50: '#f5f7f6',
-                100: '#e8eeeb',
-                200: '#d2ddd6',
-                300: '#b9cbc0',
-                400: '#9bb3a7',
-                500: '#7f9b8f',
-                600: '#647e74',
-                700: '#51675f',
-                800: '#42534d',
-                900: '#374542'
-              }
+                50: "#f5f7f6",
+                100: "#e8eeeb",
+                200: "#d2ddd6",
+                300: "#b9cbc0",
+                400: "#9bb3a7",
+                500: "#7f9b8f",
+                600: "#647e74",
+                700: "#51675f",
+                800: "#42534d",
+                900: "#374542",
+              },
             },
             fontFamily: {
-              display: ["ui-sans-serif","system-ui","-apple-system","Segoe UI","Inter","Roboto","Ubuntu","Cantarell","Noto Sans","Helvetica Neue","Arial"],
-              mono: ["ui-monospace","SFMono-Regular","Menlo","Monaco","Consolas","Liberation Mono","Courier New","monospace"]
-            }
-          }
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              display: ["Doto", "ui-sans-serif", "system-ui"],
+              mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+              special: ["Doto", "ui-sans-serif", "system-ui"],
+            },
+          },
         },
-        darkMode: 'class'
+        darkMode: "class",
       };
     </script>
   </head>
-  <body id="cv-body" class="bg-white text-zinc-900 antialiased selection:bg-accent-200 selection:text-zinc-900">
-    <!-- Controls -->
+  <body id="cv-body" class="bg-white text-zinc-900 antialiased selection:bg-accent-200 selection:text-zinc-900 font-sans">
     <div class="fixed top-5 right-5 z-50 flex gap-2">
       <button
         id="langToggle"
         class="rounded-full border border-zinc-300 px-3 py-1 text-sm text-zinc-700 hover:bg-zinc-50 active:scale-95 transition dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
         aria-label="Switch language"
-      >EN</button>
+      >
+        EN
+      </button>
       <button
         onclick="toggleDarkMode()"
         class="rounded-full border border-zinc-300 px-3 py-1 text-sm text-zinc-700 hover:bg-zinc-50 active:scale-95 transition dark:border-zinc-700 dark:text-zinc-200 dark:hover:bg-zinc-800"
         aria-label="Alternar modo de cor (escuro/claro)"
       >
-        <svg class="w-4 h-4 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg
+          class="w-4 h-4 block dark:hidden"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
           <circle cx="12" cy="12" r="5"></circle>
           <line x1="12" y1="1" x2="12" y2="3"></line>
           <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -57,235 +74,470 @@
           <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+
+        <svg
+          class="w-4 h-4 hidden dark:block"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
       </button>
     </div>
 
     <div class="mx-auto max-w-6xl px-6 md:px-10">
-      <header class="pt-16 md:pt-24 pb-10 md:pb-16">
+      <header class="pt-12 md:pt-16 pb-8 md:pb-12">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
-          <div class="md:col-span-7">
-            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight">Leandro Barroso</h1>
-            <!-- subtitle EN/PT -->
-            <p data-lang="en" class="i18n mt-2 text-base md:text-lg text-zinc-600 dark:text-zinc-300">Senior Web Developer — frontend focus (Angular) with full‑stack background</p>
-            <p data-lang="pt" class="i18n hidden mt-2 text-base md:text-lg text-zinc-600 dark:text-zinc-300">Senior Web Developer — foco em frontend (Angular) com background full‑stack</p>
+          <div class="md:col-span-8">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight font-special">Leandro Barroso</h1>
+            <p data-lang="en" class="i18n mt-2 text-base md:text-lg text-zinc-600 dark:text-zinc-300">
+              Senior Web Developer | frontend focus with full‑stack background
+            </p>
+            <p data-lang="pt" class="i18n hidden mt-2 text-base md:text-lg text-zinc-600 dark:text-zinc-300">
+              Senior Web Developer | foco em frontend com background full‑stack
+            </p>
           </div>
-          <!-- Contact with icons -->
-          <address class="not-italic md:col-span-5 md:justify-self-end text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
+          <address class="not-italic md:col-span-4 md:justify-self-end text-sm text-zinc-600 dark:text-zinc-300 space-y-1">
             <div class="flex items-center gap-2">
-              <!-- Location icon -->
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10.5C21 16 12 22 12 22S3 16 3 10.5a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10.5" r="3"/></svg>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 10.5C21 16 12 22 12 22S3 16 3 10.5a9 9 0 1 1 18 0Z" />
+                <circle cx="12" cy="10.5" r="3" />
+              </svg>
               <span>Porto, Portugal</span>
             </div>
             <div class="flex items-center gap-2">
-              <!-- Email icon -->
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><path d="m22 8-10 6L2 8"/></svg>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" />
+                <path d="m22 8-10 6L2 8" />
+              </svg>
               <a href="mailto:lafbarroso@gmail.com" class="underline decoration-accent-300 underline-offset-4 hover:decoration-2">lafbarroso@gmail.com</a>
             </div>
             <div class="flex items-center gap-2">
-              <!-- LinkedIn icon -->
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5Zm7.5 0h3.84v1.98h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-3.99v-6.58c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V23H8V8.5Z"/></svg>
-              <a href="https://www.linkedin.com/in/lafbarroso" target="_blank" rel="noreferrer" class="underline decoration-accent-300 underline-offset-4 hover:decoration-2">linkedin.com/in/lafbarroso</a>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.5 8.5h4V23h-4V8.5Zm7.5 0h3.84v1.98h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V23h-3.99v-6.58c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V23H8V8.5Z"
+                />
+              </svg>
+              <a
+                href="https://www.linkedin.com/in/lafbarroso"
+                target="_blank"
+                rel="noreferrer"
+                class="underline decoration-accent-300 underline-offset-4 hover:decoration-2"
+                >linkedin.com/in/lafbarroso</a
+              >
             </div>
           </address>
         </div>
       </header>
 
-      <main class="pb-24">
-        <!-- Profile -->
-        <section class="border-y border-zinc-200 dark:border-zinc-800 py-8 md:py-10">
-          <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Profile</h2>
-          <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Perfil</h2>
+      <main class="pb-12">
+        <div class="lg:grid lg:grid-cols-8 lg:gap-x-12 cv-section-group">
+          <section class="py-6 lg:col-span-5 cv-profile-section">
+            <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Profile</h2>
+            <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Perfil</h2>
+            <p data-lang="en" class="i18n mt-3 leading-relaxed text-zinc-800 dark:text-zinc-200">
+              <strong>Senior Web Developer</strong> with <strong>10 years of experience</strong>, specializing in modern <strong>Frontend</strong> (<strong
+                >Angular</strong
+              >
+              focus). Currently expanding skill set by learning <strong>Next.js</strong>. Proficient with <strong>database design</strong> and backend
+              implementation when required. <br />
+              Experience across <strong>banking</strong> and <strong>healthcare</strong>, remote teams, and larger orgs (incl. small team lead). Strong interest
+              in <strong>product development</strong> and process optimization.
+            </p>
 
-          <p data-lang="en" class="i18n mt-3 leading-relaxed text-zinc-800 dark:text-zinc-200 max-w-prose">
-            <strong>Developer</strong> with <strong>10 years of experience</strong>. Predominantly <strong>frontend</strong> (especially <strong>Angular</strong>), comfortable with database design and backend as needed. Experience across <strong>banking</strong> and <strong>healthcare</strong>, remote teams, and larger orgs (incl. small team lead). I enjoy building <strong>useful</strong>, <strong>intuitive</strong> tools and improving internal processes. Growing interest in the <strong>product</strong> side.
-          </p>
-          <p data-lang="pt" class="i18n hidden mt-3 leading-relaxed text-zinc-800 dark:text-zinc-200 max-w-prose">
-            <strong>Developer</strong> com <strong>10 anos de experiência</strong>. Predominantemente <strong>frontend</strong> (especialmente <strong>Angular</strong>), confortável com desenho de bases de dados e backend quando necessário. Experiência em <strong>banca</strong> e <strong>saúde</strong>, trabalho remoto e organizações maiores (incl. liderança de pequena equipa). Gosto de construir ferramentas <strong>úteis</strong>, <strong>intuitivas</strong> e de melhorar processos internos. Interesse crescente em <strong>produto</strong>.
-          </p>
-        </section>
+            <p data-lang="pt" class="i18n hidden mt-3 leading-relaxed text-zinc-800 dark:text-zinc-200">
+              <strong>Senior Web Developer</strong> com <strong>10 anos de experiência</strong>, especializado em <strong>Frontend</strong> moderno (foco em
+              <strong>Angular</strong>). Atualmente, estou a expandir as minhas competências e a aprender <strong>Next.js</strong>. Profundamente confortável
+              com <strong>desenho de bases de dados</strong> e implementação de backend quando necessário. <br />
+              Experiência em <strong>banca</strong> e <strong>saúde</strong>, equipas remotas e organizações maiores (incl. liderança de pequena equipa). Forte
+              interesse em <strong>desenvolvimento de produto</strong> e otimização de processos.
+            </p>
+          </section>
 
-        <!-- Featured skills (highlight) -->
-        <section class="py-8 md:py-10">
-          <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Core skills</h2>
-          <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Competências chave</h2>
-
-          <div class="mt-4 flex flex-wrap gap-2">
-            <!-- Highlighted trio -->
-            <span class="text-base md:text-lg font-medium tracking-tight inline-flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 bg-accent-50/60 dark:bg-zinc-900/60">Angular</span>
-            <span class="text-base md:text-lg font-medium tracking-tight inline-flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 bg-accent-50/60 dark:bg-zinc-900/60">TypeScript</span>
-            <span class="text-base md:text-lg font-medium tracking-tight inline-flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 bg-accent-50/60 dark:bg-zinc-900/60">JavaScript</span>
-          </div>
-
-          <!-- Rest of tags -->
-          <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm">
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">HTML/CSS</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Ionic</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">REST APIs</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">SQL • PostgreSQL • MySQL</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">.NET / C#</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Git/GitHub</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Node.js</span>
-            <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">SolidJS</span>
-          </div>
-        </section>
-
-        <!-- Experience -->
-        <section class="py-8 md:py-10">
-          <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Experience</h2>
-          <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Experiência</h2>
-
-          <div class="mt-6 space-y-8">
-            <article class="relative">
-              <div class="md:flex md:items-baseline md:justify-between">
-                <h3 class="text-lg font-medium">Software Developer, Cambridge Digital Health</h3>
-                <span class="text-xs text-zinc-500 dark:text-zinc-400">Remote · Jan 2020 — Present</span>
-              </div>
-              <ul data-lang="en" class="i18n mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Full‑stack development of internal web and mobile apps (healthcare).</li>
-                <li>Stack: Angular, TypeScript, JS, Ionic, Node.js, SolidJS, MySQL, Go.</li>
-                <li>UX input, process improvements, support to distributed teams.</li>
-              </ul>
-              <ul data-lang="pt" class="i18n hidden mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Desenvolvimento full‑stack de aplicações web internas e mobile (saúde).</li>
-                <li>Stack: Angular, TypeScript, JS, Ionic, Node.js, SolidJS, MySQL, Go.</li>
-                <li>Contributos em UX, melhoria de processos e suporte a equipas distribuídas.</li>
-              </ul>
-            </article>
-
-            <article>
-              <div class="md:flex md:items-baseline md:justify-between">
-                <h3 class="text-lg font-medium">Information Systems Consultant, ITSCredit</h3>
-                <span class="text-xs text-zinc-500 dark:text-zinc-400">Porto · Jun 2018 — Dec 2019</span>
-              </div>
-              <ul data-lang="en" class="i18n mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Full‑stack development for credit & banking processes.</li>
-                <li>Small team lead; international delivery.</li>
-                <li>Stack: C#, .NET, SQL Server, Angular.</li>
-              </ul>
-              <ul data-lang="pt" class="i18n hidden mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Desenvolvimento full‑stack em processos de crédito e banca.</li>
-                <li>Liderança de pequena equipa; entrega internacional.</li>
-                <li>Stack: C#, .NET, SQL Server, Angular.</li>
-              </ul>
-            </article>
-
-            <article>
-              <div class="md:flex md:items-baseline md:justify-between">
-                <h3 class="text-lg font-medium">Information Systems Consultant, ITSector</h3>
-                <span class="text-xs text-zinc-500 dark:text-zinc-400">Porto · May 2016 — Jun 2018</span>
-              </div>
-              <ul data-lang="en" class="i18n mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Banking solutions development.</li>
-                <li>Stack: C#, .NET, SQL Server.</li>
-              </ul>
-              <ul data-lang="pt" class="i18n hidden mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Desenvolvimento de soluções para banca.</li>
-                <li>Stack: C#, .NET, SQL Server.</li>
-              </ul>
-            </article>
-
-            <article>
-              <div class="md:flex md:items-baseline md:justify-between">
-                <h3 class="text-lg font-medium">Web Developer, PcPlus</h3>
-                <span class="text-xs text-zinc-500 dark:text-zinc-400">Porto · May 2015 — Mar 2016</span>
-              </div>
-              <ul data-lang="en" class="i18n mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Front‑end & back‑end of a billing system.</li>
-                <li>Stack: ASP.NET MVC, SQL, Bootstrap.</li>
-              </ul>
-              <ul data-lang="pt" class="i18n hidden mt-3 list-disc pl-5 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-                <li>Front‑end e back‑end de sistema de faturação.</li>
-                <li>Stack: ASP.NET MVC, SQL, Bootstrap.</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <!-- Education -->
-        <section class="py-8 md:py-10">
-          <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Education</h2>
-          <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Educação</h2>
-
-          <div class="mt-4">
-            <div class="md:flex md:items-baseline md:justify-between">
-              <h3 class="text-lg font-medium" data-lang="en">MSc in Informatics Engineering</h3>
-              <h3 class="text-lg font-medium i18n hidden" data-lang="pt">Mestrado em Engenharia Informática</h3>
-              <span class="text-xs text-zinc-500 dark:text-zinc-400">2007 — 2014</span>
+          <section class="py-6 lg:col-span-3 cv-skills-section">
+            <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest font-medium">Core skills</h2>
+            <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest font-medium">Competências chave</h2>
+            <div class="mt-4 flex flex-wrap gap-2 font-display font-extrabold">
+              <span
+                class="text-base md:text-lg tracking-tight inline-flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 bg-accent-50/60 dark:bg-zinc-900/60 min-w-24"
+                >Angular</span
+              >
+              <span
+                class="text-base md:text-lg tracking-tight inline-flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 bg-accent-50/60 dark:bg-zinc-900/60"
+                >TypeScript</span
+              >
+              <span
+                class="text-base md:text-lg tracking-tight inline-flex items-center gap-2 rounded-full border border-zinc-300 dark:border-zinc-700 px-3 py-1.5 bg-accent-50/60 dark:bg-zinc-900/60"
+                >JavaScript</span
+              >
             </div>
-            <p class="text-zinc-700 dark:text-zinc-300 mt-1" data-lang="en">University of Coimbra, Portugal</p>
-            <p class="text-zinc-700 dark:text-zinc-300 mt-1 i18n hidden" data-lang="pt">Universidade de Coimbra, Portugal</p>
-          </div>
-        </section>
 
-        <!-- Footer availability -->
+            <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 gap-2 text-sm font-display font-extrabold">
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">HTML/CSS</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Ionic</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Next.js</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">PostgreSQL</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">MySQL</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">SQL Server</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">.NET / C#</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Node.js</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">SolidJS</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">REST APIs</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-3 py-1 dark:border-zinc-800">Git/GitHub</span>
+            </div>
+          </section>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-8 lg:gap-x-12 cv-section-group">
+          <section class="py-6 lg:col-span-5 cv-experience-section">
+            <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Experience</h2>
+            <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Experiência</h2>
+
+            <div class="mt-5 space-y-7">
+              <article class="relative">
+                <div class="md:flex md:items-baseline md:justify-between">
+                  <h3 class="text-lg font-medium">Software Developer, Cambridge Digital Health</h3>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400">Remote · Jan 2020 — Present</span>
+                </div>
+                <button
+                  onclick="toggleJobDetails(this)"
+                  data-lang-en="[Show Details]"
+                  data-lang-pt="[Mostrar Detalhes]"
+                  aria-expanded="false"
+                  class="toggle-details mt-1 text-xs text-accent-700 dark:text-accent-300 hover:text-accent-500 dark:hover:text-accent-500 transition underline-offset-2 hover:underline"
+                >
+                  [Show Details]
+                </button>
+                <ul data-lang="en" class="job-details i18n mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Full‑stack development of web and mobile (hybrid) apps for the healthcare sector.</li>
+                  <li>Involved in multiple stages of the development cycle, with emphasis on implementation</li>
+                  <li>Stack: Angular, TypeScript, JS, Ionic, Node.js, SolidJS, MySQL, Go, NextJS.</li>
+                </ul>
+                <ul data-lang="pt" class="job-details i18n hidden mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Desenvolvimento full‑stack de aplicações web e mobile (hybrid) para o setor da saúde.</li>
+                  <li>Envolvido em múltiplas fases do ciclo de desenvolvimento, com ênfase na implementação</li>
+                  <li>Stack: Angular, TypeScript, JS, Ionic, Node.js, SolidJS, MySQL, Go.</li>
+                </ul>
+              </article>
+
+              <article>
+                <div class="md:flex md:items-baseline md:justify-between">
+                  <h3 class="text-lg font-medium">Information Systems Consultant, ITSCredit</h3>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400">Porto · Jun 2018 — Dec 2019</span>
+                </div>
+                <button
+                  onclick="toggleJobDetails(this)"
+                  data-lang-en="[Show Details]"
+                  data-lang-pt="[Mostrar Detalhes]"
+                  aria-expanded="false"
+                  class="toggle-details mt-1 text-xs text-accent-700 dark:text-accent-300 hover:text-accent-500 dark:hover:text-accent-500 transition underline-offset-2 hover:underline"
+                >
+                  [Show Details]
+                </button>
+                <ul data-lang="en" class="job-details i18n mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Full‑stack development for credit & banking processes.</li>
+                  <li>Small team lead; international delivery.</li>
+                  <li>Stack: C#, .NET, SQL Server, Angular.</li>
+                </ul>
+                <ul data-lang="pt" class="job-details i18n hidden mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Desenvolvimento full‑stack em processos de crédito e banca.</li>
+                  <li>Liderança de pequena equipa; entrega internacional.</li>
+                  <li>Stack: C#, .NET, SQL Server, Angular.</li>
+                </ul>
+              </article>
+
+              <article>
+                <div class="md:flex md:items-baseline md:justify-between">
+                  <h3 class="text-lg font-medium">Information Systems Consultant, ITSector</h3>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400">Porto · May 2016 — Jun 2018</span>
+                </div>
+                <button
+                  onclick="toggleJobDetails(this)"
+                  data-lang-en="[Show Details]"
+                  data-lang-pt="[Mostrar Detalhes]"
+                  aria-expanded="false"
+                  class="toggle-details mt-1 text-xs text-accent-700 dark:text-accent-300 hover:text-accent-500 dark:hover:text-accent-500 transition underline-offset-2 hover:underline"
+                >
+                  [Show Details]
+                </button>
+                <ul data-lang="en" class="job-details i18n mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Banking solutions development.</li>
+                  <li>Stack: C#, .NET, SQL Server.</li>
+                </ul>
+                <ul data-lang="pt" class="job-details i18n hidden mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Desenvolvimento de soluções para banca.</li>
+                  <li>Stack: C#, .NET, SQL Server.</li>
+                </ul>
+              </article>
+
+              <article>
+                <div class="md:flex md:items-baseline md:justify-between">
+                  <h3 class="text-lg font-medium">Web Developer, PcPlus</h3>
+                  <span class="text-xs text-zinc-500 dark:text-zinc-400">Porto · May 2015 — Mar 2016</span>
+                </div>
+                <button
+                  onclick="toggleJobDetails(this)"
+                  data-lang-en="[Show Details]"
+                  data-lang-pt="[Mostrar Detalhes]"
+                  aria-expanded="false"
+                  class="toggle-details mt-1 text-xs text-accent-700 dark:text-accent-300 hover:text-accent-500 dark:hover:text-accent-500 transition underline-offset-2 hover:underline"
+                >
+                  [Show Details]
+                </button>
+                <ul data-lang="en" class="job-details i18n mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Front‑end & back‑end of a billing system.</li>
+                  <li>Stack: ASP.NET MVC, SQL, Bootstrap.</li>
+                </ul>
+                <ul data-lang="pt" class="job-details i18n hidden mt-2 list-disc pl-5 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed collapsed">
+                  <li>Front‑end e back‑end de sistema de faturação.</li>
+                  <li>Stack: ASP.NET MVC, SQL, Bootstrap.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="py-6 lg:col-span-3 cv-education-section">
+            <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Education</h2>
+            <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Educação</h2>
+
+            <div class="mt-4">
+              <div class="md:flex md:items-baseline md:justify-between">
+                <h3 class="text-lg font-medium i18n" data-lang="en">MSc in Informatics Engineering</h3>
+                <h3 class="text-lg font-medium i18n hidden" data-lang="pt">Mestrado em Engenharia Informática</h3>
+                <span class="text-xs text-zinc-500 dark:text-zinc-400">2007 — 2014</span>
+              </div>
+              <p class="text-zinc-700 dark:text-zinc-300 mt-1 i18n" data-lang="en">University of Coimbra, Portugal</p>
+              <p class="text-zinc-700 dark:text-zinc-300 mt-1 i18n hidden" data-lang="pt">Universidade de Coimbra, Portugal</p>
+            </div>
+          </section>
+        </div>
+
         <footer class="pt-8 mt-8 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 dark:text-zinc-400">
-          <p data-lang="en" class="i18n">Open to remote or hybrid (Porto area). Prefer products with positive impact (healthcare, parenting, music, logistics, maps, travel).</p>
-          <p data-lang="pt" class="i18n hidden">Disponível para remoto ou híbrido (Porto e arredores). Preferência por produto com impacto positivo (saúde, parentalidade, música, logística, mapas, viagens).</p>
+          <p data-lang="en" class="i18n">
+            Open to remote or hybrid (Porto area). Prefer products with positive impact (healthcare, parenting, music, logistics, maps, travel).
+          </p>
+          <p data-lang="pt" class="i18n hidden">
+            Disponível para remoto ou híbrido (Porto e arredores). Preferência por produto com impacto positivo (saúde, parentalidade, música, logística, mapas,
+            viagens).
+          </p>
           <p class="mt-2 text-zinc-400 dark:text-zinc-600">
-            <span data-lang="en" class="i18n">Built by Leandro Barroso with HTML, Tailwind CSS, and Vanilla JS. View source on <a href="YOUR_GITHUB_REPO_URL_HERE" target="_blank" rel="noopener noreferrer" class="underline decoration-accent-300 underline-offset-4 hover:decoration-2">GitHub</a>.</span>
-            <span data-lang="pt" class="i18n hidden">Construído por Leandro Barroso com HTML, Tailwind CSS e Vanilla JS. Ver código em <a href="YOUR_GITHUB_REPO_URL_HERE" target="_blank" rel="noopener noreferrer" class="underline decoration-accent-300 underline-offset-4 hover:decoration-2">GitHub</a>.</span>
+            <span data-lang="en" class="i18n"
+              >Built by Leandro Barroso with HTML, Tailwind CSS, and Vanilla JS. View source on
+              <a
+                href="https://github.com/lafbarroso/cv"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline decoration-accent-300 underline-offset-4 hover:decoration-2"
+                >GitHub</a
+              >.</span
+            >
+            <span data-lang="pt" class="i18n hidden"
+              >Construído por Leandro Barroso com HTML, Tailwind CSS e Vanilla JS. Ver código em
+              <a
+                href="YOUR_GITHUB_REPO_URL_HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline decoration-accent-300 underline-offset-4 hover:decoration-2"
+                >GitHub</a
+              >.</span
+            >
           </p>
         </footer>
       </main>
     </div>
 
     <script>
-      const body = document.getElementById('cv-body');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        body.classList.add('dark', 'bg-zinc-950', 'text-zinc-100');
+      // --- Dark Mode Logic (Mantido) ---
+      const body = document.getElementById("cv-body");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+        body.classList.add("dark", "bg-zinc-950", "text-zinc-100");
+      } else if (savedTheme === "light") {
+        body.classList.remove("dark", "bg-zinc-950", "text-zinc-100");
       }
 
-      function toggleDarkMode(){
-        body.classList.toggle('dark');
-        body.classList.toggle('bg-zinc-950');
-        body.classList.toggle('text-zinc-100');
-        // Save user preference
-        if (body.classList.contains('dark')) {
-          localStorage.setItem('theme', 'dark');
+      function toggleDarkMode() {
+        body.classList.toggle("dark");
+        body.classList.toggle("bg-zinc-950");
+        body.classList.toggle("text-zinc-100");
+        if (body.classList.contains("dark")) {
+          localStorage.setItem("theme", "dark");
         } else {
-          localStorage.setItem('theme', 'light');
+          localStorage.setItem("theme", "light");
         }
       }
 
-      // Load user preference for dark mode
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        body.classList.add('dark', 'bg-zinc-950', 'text-zinc-100');
-      } else if (savedTheme === 'light') {
-        body.classList.remove('dark', 'bg-zinc-950', 'text-zinc-100');
+      // --- Job Details Toggle Logic (Mantido) ---
+      function toggleJobDetails(button) {
+        const article = button.closest("article");
+        const currentLang = document.documentElement.lang;
+
+        // Apenas seleciona a lista visível (da língua atual)
+        const detailsList = article.querySelector(`.job-details[data-lang="${currentLang}"]:not(.hidden)`);
+
+        if (!detailsList) return;
+
+        // Alternar a classe 'collapsed' (isto faz o show/hide)
+        detailsList.classList.toggle("collapsed");
+
+        let isExpanded = !detailsList.classList.contains("collapsed");
+        button.setAttribute("aria-expanded", isExpanded);
+
+        // Atualizar o texto do botão
+        const showText = button.getAttribute(`data-lang-${currentLang === "pt" ? "pt" : "en"}`);
+        const hideText = currentLang === "pt" ? "[Ocultar Detalhes]" : "[Hide Details]";
+
+        button.textContent = isExpanded ? hideText : showText;
       }
 
-      // Language toggle (default EN)
-      let currentLang = 'en';
-      function applyLang(lang){
+      // --- Language Toggle Logic ---
+      let currentLang = "en";
+
+      function updateJobToggleButtons(newLang) {
+        document.querySelectorAll(".toggle-details").forEach((button) => {
+          const article = button.closest("article");
+          const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+          const showText = button.getAttribute(`data-lang-${newLang === "pt" ? "pt" : "en"}`);
+          const hideText = newLang === "pt" ? "[Ocultar Detalhes]" : "[Hide Details]";
+
+          button.textContent = isExpanded ? hideText : showText;
+
+          // *** CORREÇÃO: Forçar o estado de "aberto" para a ul da nova língua ***
+          if (isExpanded) {
+            // 1. Colapsar TODAS as listas de detalhes neste artigo
+            article.querySelectorAll(".job-details").forEach((list) => {
+              list.classList.add("collapsed");
+            });
+
+            // 2. Abrir (remover 'collapsed') APENAS a lista de detalhes da nova língua
+            const newDetailsList = article.querySelector(`.job-details[data-lang="${newLang}"]`);
+            if (newDetailsList) {
+              newDetailsList.classList.remove("collapsed");
+            }
+          }
+          // *******************************************************************
+        });
+      }
+
+      function applyLang(lang) {
         currentLang = lang;
         document.documentElement.lang = lang;
-        document.querySelectorAll('.i18n').forEach(el => {
-          const elLang = el.getAttribute('data-lang');
+
+        document.querySelectorAll(".i18n").forEach((el) => {
+          const elLang = el.getAttribute("data-lang");
           if (!elLang) return;
-          if (elLang === lang) el.classList.remove('hidden');
-          else el.classList.add('hidden');
+
+          if (elLang === lang) {
+            el.classList.remove("hidden");
+          } else {
+            el.classList.add("hidden");
+          }
         });
-        // Update toggle label
-        const btn = document.getElementById('langToggle');
+
+        // Sincroniza o estado "aberto" e traduz o texto do botão
+        updateJobToggleButtons(lang);
+        const btn = document.getElementById("langToggle");
         btn.textContent = lang.toUpperCase();
       }
-      applyLang('en');
-      document.getElementById('langToggle').addEventListener('click', () => {
-        applyLang(currentLang === 'en' ? 'pt' : 'en');
+
+      applyLang("en");
+      document.getElementById("langToggle").addEventListener("click", () => {
+        applyLang(currentLang === "en" ? "pt" : "en");
       });
     </script>
 
     <style>
-      h1, h2, h3 { letter-spacing:-0.01em; }
-      section + section { border-top: 1px solid rgba(24,24,27,0.06); }
-      .dark section + section { border-top-color: rgba(244,244,245,0.08); }
-      a { color: inherit; }
-      a:not([href*="github.com"]):hover { color: #51675f; }
+      /* Keeping this style block minimal and efficient */
+      .font-display {
+        letter-spacing: -0.02em;
+      }
+
+      /* --- CSS FOR COLLAPSIBLE DETAILS (maintained) --- */
+      .job-details.collapsed {
+        display: none !important;
+      }
+      .job-details:not(.collapsed) {
+        display: block !important;
+      }
+
+      /* Base section divider for all sections (except the first one in the grid) */
+      main section {
+        border-top: 1px solid rgba(24, 24, 27, 0.06);
+      }
+      .dark main section {
+        border-top-color: rgba(244, 244, 245, 0.08);
+      }
+      /* Remove the top border from the very first section on mobile */
+      main .cv-section-group:first-child section:first-child {
+        border-top: none;
+      }
+
+      /* Two-Column Layout Dividers and Padding (Lg Screens) */
+      @media (min-width: 1024px) {
+        /* Remove all default borders within the grid */
+        .lg\:grid section {
+          border-top: none !important;
+        }
+
+        /* 1. Profile/Skills Group */
+        .cv-section-group .cv-profile-section {
+          /* Profile Section (left) */
+          padding-right: 2rem; /* Increase padding for better separation */
+          padding-bottom: 0; /* Align with skills padding */
+        }
+
+        .cv-section-group .cv-skills-section {
+          /* Skills Section (right) */
+          padding-left: 2rem; /* Increase padding for better separation */
+        }
+
+        .cv-section-group .cv-experience-section {
+          /* Experience Section (left) */
+          padding-right: 2rem;
+          padding-bottom: 0;
+        }
+
+        .cv-section-group .cv-education-section {
+          /* Education Section (right) */
+          padding-left: 2rem;
+        }
+      }
+
+      a {
+        color: inherit;
+      }
+      /* Targeting non-GitHub links to maintain hover effect */
+      a:not([href*="github.com"]):hover {
+        color: #51675f;
+      }
     </style>
   </body>
 </html>
