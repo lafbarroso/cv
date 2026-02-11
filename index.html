@@ -195,15 +195,12 @@
 
       <main class="pb-12">
         <div class="lg:grid lg:grid-cols-8 lg:gap-x-12 cv-section-group">
-          <section class="py-6 lg:col-span-6 lg:order-1 cv-profile-section">
+          <section class="py-6 lg:col-span-6 lg:order-1 cv-profile-section lg:mr-8">
             <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Profile</h2>
             <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Perfil</h2>
-            <p data-lang="en" class="i18n mt-3 leading-relaxed text-zinc-800 dark:text-zinc-200">
-              <strong>Senior Web Developer</strong> with <strong>10 years of experience</strong>, specializing in modern <strong>Frontend</strong> (<strong
-                >Angular</strong
-              >
-              focus). Currently expanding skill set by learning <strong>Next.js</strong>. Proficient with <strong>database design</strong> and backend
-              implementation when required. <br />
+            <p data-lang="en" class="i18n mt-3 leading-relaxed text-zinc-800 dark:text-zinc-200 text-justify">
+              <strong>Senior Web Developer</strong> with <strong>10 years of experience</strong>, specializing in modern <strong>Frontend</strong>.<br />
+              Proficient with <strong>database design</strong> and backend implementation when required. <br />
               Experience across <strong>banking</strong> and <strong>healthcare</strong>, remote teams, and larger orgs (incl. small team lead). Strong interest
               in <strong>product development</strong> and process optimization.
             </p>
@@ -217,7 +214,7 @@
             </p>
           </section>
 
-          <section class="py-6 lg:col-span-2 lg:row-span-3 lg:order-2 cv-skills-section">
+          <section class="py-6 lg:col-span-2 lg:row-span-3 lg:order-2 cv-skills-section lg:ml-8">
             <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest font-medium">Core skills</h2>
             <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest font-medium">Competências chave</h2>
             <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-1 gap-2 font-display font-extrabold">
@@ -255,7 +252,8 @@
               >
             </div>
           </section>
-          <section class="py-6 lg:col-span-6 lg:order-3 cv-experience-section">
+
+          <section class="py-6 lg:col-span-6 lg:order-3 cv-experience-section lg:mr-8">
             <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Experience</h2>
             <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Experiência</h2>
 
@@ -362,7 +360,7 @@
             </div>
           </section>
 
-          <section class="py-6 lg:col-span-6 lg:order-4 cv-education-section">
+          <section class="py-6 lg:col-span-6 lg:order-4 cv-education-section lg:mr-8">
             <h2 data-lang="en" class="i18n text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Education</h2>
             <h2 data-lang="pt" class="i18n hidden text-sm uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-medium">Educação</h2>
 
@@ -546,29 +544,6 @@
         /* Remove all default borders within the grid */
         .lg\:grid section {
           border-top: none !important;
-        }
-
-        /* 1. Profile/Skills Group */
-        .cv-section-group .cv-profile-section {
-          /* Profile Section (left) */
-          padding-right: 2rem; /* Increase padding for better separation */
-          padding-bottom: 0; /* Align with skills padding */
-        }
-
-        .cv-section-group .cv-skills-section {
-          /* Skills Section (right) */
-          padding-left: 2rem; /* Increase padding for better separation */
-        }
-
-        .cv-section-group .cv-experience-section {
-          /* Experience Section (left) */
-          padding-right: 2rem;
-          padding-bottom: 0;
-        }
-
-        .cv-section-group .cv-education-section {
-          /* Education Section (right) */
-          padding-left: 2rem;
         }
       }
 
